@@ -98,7 +98,6 @@
       overflow-x: hidden;
     }
 
-    /* Subtle Mandala Watermark Background */
     .mandala-bg {
       position: fixed;
       inset: 0;
@@ -109,7 +108,6 @@
       z-index: 0;
     }
 
-    /* Calligraphic Script Protection against horizontal clipping */
     .calligraphy-hero {
       font-family: 'Pinyon Script', 'Alex Brush', cursive;
       display: inline-block;
@@ -121,7 +119,6 @@
       text-shadow: 0 2px 12px rgba(234, 179, 8, 0.18);
     }
 
-    /* Floating Marigold & Mehendi Leaf Petals */
     .petal-layer {
       position: fixed;
       inset: 0;
@@ -138,23 +135,12 @@
     }
 
     @keyframes petalFall {
-      0% {
-        transform: translateY(-40px) rotate(0deg) translateX(0px);
-        opacity: 0;
-      }
-      12% {
-        opacity: 0.72;
-      }
-      85% {
-        opacity: 0.65;
-      }
-      100% {
-        transform: translateY(108vh) rotate(340deg) translateX(35px);
-        opacity: 0;
-      }
+      0% { transform: translateY(-40px) rotate(0deg) translateX(0px); opacity: 0; }
+      12% { opacity: 0.72; }
+      85% { opacity: 0.65; }
+      100% { transform: translateY(108vh) rotate(340deg) translateX(35px); opacity: 0; }
     }
 
-    /* 3D Clickable Pocket Envelope Stage */
     .envelope-stage {
       perspective: 1600px;
       transition: opacity 0.65s ease, transform 0.65s ease;
@@ -175,14 +161,12 @@
       transform: translateY(-6px) rotateX(4deg);
     }
 
-    /* Cotton-Rag Paper Micro-Weave Overlay */
     .paper-weave {
       background-image:
         repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0px, rgba(255, 255, 255, 0.025) 1px, transparent 1px, transparent 3px),
         repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0px, rgba(0, 0, 0, 0.05) 1px, transparent 1px, transparent 3px);
     }
 
-    /* Envelope Back & Marigold Brocade Liner */
     .envelope-back {
       position: absolute;
       inset: 0;
@@ -204,7 +188,6 @@
       box-shadow: inset 0 12px 24px rgba(66, 32, 6, 0.45);
     }
 
-    /* Invitation Card Inside Envelope */
     .envelope-card-peek {
       position: absolute;
       left: 5.5%;
@@ -229,7 +212,6 @@
       transform: translateY(-58%);
     }
 
-    /* Left & Right Side Flaps with Paper Grain & Dimensional Shadows */
     .envelope-left-flap {
       position: absolute;
       inset: 0;
@@ -250,7 +232,6 @@
       box-shadow: inset -2px 0 6px rgba(250, 204, 21, 0.16);
     }
 
-    /* Bottom Pocket Flap with Gold Foil Stitching & Crest */
     .envelope-bottom-flap {
       position: absolute;
       inset: 0;
@@ -269,7 +250,6 @@
       pointer-events: none;
     }
 
-    /* Top Triangular Flap */
     .envelope-top-flap {
       position: absolute;
       inset: 0;
@@ -285,7 +265,6 @@
       z-index: 1;
     }
 
-    /* Organic Hand-Stamped Melted Wax Seal */
     .wax-seal-container {
       position: absolute;
       top: 50%;
@@ -341,7 +320,6 @@
       }
     }
 
-    /* Sparkle Particle Burst */
     .sparkle-particle {
       position: fixed;
       width: 8px;
@@ -353,17 +331,10 @@
     }
 
     @keyframes sparkleExplode {
-      0% {
-        transform: translate(0, 0) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translate(var(--tx), var(--ty)) scale(0);
-        opacity: 0;
-      }
+      0% { transform: translate(0, 0) scale(1); opacity: 1; }
+      100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
     }
 
-    /* Main Invitation Card Reveal */
     .invitation-reveal {
       opacity: 0;
       transform: translateY(28px) scale(0.98);
@@ -375,7 +346,6 @@
       transform: translateY(0) scale(1);
     }
 
-    /* Parchment Card & Royal Jharokha Arch */
     .parchment-sheet {
       background-color: #FCF8EC;
       background-image:
@@ -401,15 +371,15 @@
   <div class="mandala-bg" aria-hidden="true"></div>
   <div id="petalLayer" class="petal-layer" aria-hidden="true"></div>
 
-  <!-- Top Floating Controls (Appears when invitation is open) -->
+  <!-- Top Floating Controls -->
   <div id="topControls" class="fixed top-4 right-4 z-40 hidden flex-wrap items-center gap-2">
     <button id="audioToggleBtn" type="button" onclick="toggleAmbientAudio()"
-      class="flex items-center gap-1.5 rounded-full bg-mehendi-900/90 px-3.5 py-2 text-xs font-sans font-medium uppercase tracking-widest text-marigold-200 border border-marigold-500/40 shadow-lg backdrop-blur-md hover:bg-mehendi-800 transition">
-      <span id="audioIcon">🔇</span>
-      <span id="audioLabel">Chimes Off</span>
+      class="flex items-center gap-1.5 rounded-full bg-mehendi-900/90 px-3.5 py-2 text-xs font-sans font-medium uppercase tracking-widest text-marigold-200 border border-marigold-500/40 shadow-lg backdrop-blur-md hover:bg-mehendi-800 transition cursor-pointer">
+      <span id="audioIcon">🔔</span>
+      <span id="audioLabel">Chimes On</span>
     </button>
     <button type="button" onclick="sealEnvelopeAgain()"
-      class="flex items-center gap-1.5 rounded-full bg-mehendi-900/90 px-3.5 py-2 text-xs font-sans font-medium uppercase tracking-widest text-marigold-200 border border-marigold-500/40 shadow-lg backdrop-blur-md hover:bg-mehendi-800 transition">
+      class="flex items-center gap-1.5 rounded-full bg-mehendi-900/90 px-3.5 py-2 text-xs font-sans font-medium uppercase tracking-widest text-marigold-200 border border-marigold-500/40 shadow-lg backdrop-blur-md hover:bg-mehendi-800 transition cursor-pointer">
       <span>✉️</span>
       <span>Seal Envelope</span>
     </button>
@@ -417,20 +387,16 @@
 
   <!-- STAGE 1: CLICKABLE 3D WAX-SEALED POCKET ENVELOPE -->
   <main id="envelopeStage" class="envelope-stage relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-10">
-    <!-- Sacred Header Above Envelope -->
     <div class="text-center mb-7">
       <p class="font-hindi text-marigold-300 text-lg sm:text-xl tracking-wide mb-1 drop-shadow">|| श्री गणेशाय नमः ||</p>
       <p class="font-sans text-[11px] sm:text-xs uppercase tracking-[0.32em] text-marigold-200/80">A Sacred Union Invitation</p>
     </div>
 
-    <!-- 3D Textured Envelope -->
     <div id="envelopeWrapper" class="envelope-wrapper" role="button" tabindex="0" aria-label="Open wedding invitation envelope for Shivangi and Rohit" onclick="openEnvelope()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openEnvelope();}">
-      <!-- Back & Marigold Brocade Liner -->
       <div class="envelope-back paper-weave">
         <div class="envelope-liner"></div>
       </div>
 
-      <!-- Inner Card Peek -->
       <div class="envelope-card-peek">
         <span class="font-sans text-[9px] uppercase tracking-[0.28em] text-mehendi-700/80 mb-1">Wedding Invitation</span>
         <div class="overflow-visible text-center px-2">
@@ -439,17 +405,13 @@
         <span class="font-cinzel text-[10px] tracking-[0.22em] text-marigold-700 mt-1">04 • 12 • 2026</span>
       </div>
 
-      <!-- Left & Right Pocket Flaps -->
       <div class="envelope-left-flap paper-weave"></div>
       <div class="envelope-right-flap paper-weave"></div>
 
-      <!-- Bottom Pocket Flap with Gold Foil Filigree -->
       <div class="envelope-bottom-flap paper-weave">
         <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 490 330" preserveAspectRatio="none">
-          <!-- Gold Foil Double Stitching along V-Pocket Seam -->
           <polyline points="8,325 245,154 482,325" fill="none" stroke="#FACC15" stroke-opacity="0.65" stroke-width="1.3" stroke-dasharray="5 4" />
           <polyline points="18,327 245,164 472,327" fill="none" stroke="#FEF08A" stroke-opacity="0.3" stroke-width="0.8" />
-          <!-- Embossed Marigold Lotus Crest at Base -->
           <g transform="translate(245, 276)" stroke="#FACC15" stroke-opacity="0.6" fill="none" stroke-width="1.1">
             <path d="M0,-14 C5,-6 5,4 0,10 C-5,4 -5,-6 0,-14 Z" />
             <path d="M-4,-10 C-12,-6 -14,2 -6,9" />
@@ -459,7 +421,6 @@
         </svg>
       </div>
 
-      <!-- Top Triangular Flap with Paper Grain & Foil Border -->
       <div class="envelope-top-flap">
         <svg class="w-full h-full" viewBox="0 0 490 330" preserveAspectRatio="none">
           <defs>
@@ -474,19 +435,14 @@
               <feComposite operator="in" in2="SourceGraphic" />
             </filter>
           </defs>
-          <!-- Triangular Flap Base -->
           <polygon points="0,0 490,0 245,184" fill="url(#topFlapGrad)" />
-          <!-- Cotton Paper Grain Overlay -->
           <polygon points="0,0 490,0 245,184" fill="#ffffff" filter="url(#paperGrain)" />
-          <!-- Top Edge Specular Highlight -->
           <line x1="2" y1="1.5" x2="488" y2="1.5" stroke="#FEF08A" stroke-opacity="0.45" stroke-width="1.5" />
-          <!-- Embossed Gold Foil Inner Border -->
           <polyline points="14,6 245,174 476,6" fill="none" stroke="#FACC15" stroke-opacity="0.72" stroke-width="1.3" stroke-dasharray="5 4" />
           <polyline points="24,6 245,164 466,6" fill="none" stroke="#FEF08A" stroke-opacity="0.32" stroke-width="0.8" />
         </svg>
       </div>
 
-      <!-- Authentic Melted Marigold/Haldi Wax Seal -->
       <div id="waxSeal" class="wax-seal-container wax-seal-pulse" title="Click to break the wax seal">
         <svg viewBox="0 0 120 120" class="w-full h-full overflow-visible">
           <defs>
@@ -507,20 +463,15 @@
               <feComposite operator="in" in2="SourceGraphic" />
             </filter>
           </defs>
-          <!-- Organic Uneven Melted Wax Silhouette -->
           <path d="M60,6 C73,5 85,11 95,18 C105,26 113,38 114,51 C116,64 111,78 104,89 C96,100 84,110 71,113 C58,116 44,113 32,106 C20,99 10,88 7,74 C4,60 7,45 14,33 C21,21 33,12 46,8 C51,7 55,6 60,6 Z"
                 fill="url(#waxBodyGrad)" stroke="url(#waxRimHighlight)" stroke-width="2.2" />
-          <!-- Mottled Wax Texture -->
           <path d="M60,6 C73,5 85,11 95,18 C105,26 113,38 114,51 C116,64 111,78 104,89 C96,100 84,110 71,113 C58,116 44,113 32,106 C20,99 10,88 7,74 C4,60 7,45 14,33 C21,21 33,12 46,8 C51,7 55,6 60,6 Z"
                 fill="#713F12" filter="url(#waxMottle)" />
-          <!-- Raised Melted Overflow Lip -->
           <path d="M60,13 C71,12 81,17 90,23 C98,30 105,40 106,52 C108,63 103,75 97,85 C90,94 80,103 69,105 C58,108 46,105 36,99 C26,93 17,83 15,71 C12,59 15,46 21,36 C27,26 37,18 48,15 Z"
                 fill="none" stroke="#FEF08A" stroke-opacity="0.42" stroke-width="1.6" />
-          <!-- Specular Gloss Drip -->
           <path d="M26,28 C33,19 45,14 56,14" fill="none" stroke="#FEFCE8" stroke-opacity="0.75" stroke-width="2.4" stroke-linecap="round" />
         </svg>
 
-        <!-- Recessed Circular Stamp Die Basin -->
         <div class="wax-seal-basin">
           <div class="w-[50px] h-[50px] rounded-full border border-dashed border-amber-900/55 flex flex-col items-center justify-center">
             <span class="font-cinzel font-bold text-[15px] tracking-wider text-amber-950/90 leading-none drop-shadow-[0_1px_0_rgba(254,249,195,0.75)]">S&amp;R</span>
@@ -530,7 +481,6 @@
       </div>
     </div>
 
-    <!-- Tap Prompt -->
     <div class="mt-8 text-center">
       <button type="button" onclick="openEnvelope()"
         class="inline-flex items-center gap-2 rounded-full bg-marigold-400/15 border border-marigold-400/45 px-5 py-2 text-xs font-sans uppercase tracking-[0.26em] text-marigold-200 hover:bg-marigold-400/25 transition cursor-pointer">
@@ -542,7 +492,6 @@
   <!-- STAGE 2: FULL ROYAL WEDDING INVITATION CARD -->
   <section id="invitationStage" class="invitation-reveal hidden relative z-10 max-w-3xl mx-auto px-4 sm:px-6 pt-16 pb-20">
     <div class="parchment-sheet rounded-2xl p-3 sm:p-5">
-      <!-- Outer & Inner Ornamental Frame -->
       <div class="relative rounded-xl border-2 border-mehendi-700/75 p-1.5 sm:p-2">
         <div class="relative rounded-lg border border-marigold-600/65 px-5 py-10 sm:px-12 sm:py-14 overflow-visible">
 
@@ -592,28 +541,24 @@
               Together With Their Families
             </p>
 
-            <!-- Bride Name -->
             <div class="overflow-visible">
               <h1 class="calligraphy-hero text-[3.4rem] sm:text-[4.6rem] md:text-[5.2rem] text-mehendi-800">
                 Shivangi
               </h1>
             </div>
 
-            <!-- Ornamental Ampersand -->
             <div class="flex items-center justify-center gap-4 my-1">
               <span class="h-px w-14 sm:w-20 bg-gradient-to-r from-transparent to-marigold-600"></span>
               <span class="font-upright italic text-2xl sm:text-3xl text-marigold-700">&amp;</span>
               <span class="h-px w-14 sm:w-20 bg-gradient-to-l from-transparent to-marigold-600"></span>
             </div>
 
-            <!-- Groom Name -->
             <div class="overflow-visible">
               <h2 class="calligraphy-hero text-[3.4rem] sm:text-[4.6rem] md:text-[5.2rem] text-mehendi-800">
                 Rohit
               </h2>
             </div>
 
-            <!-- Save The Date Ribbon -->
             <div class="mt-6 pt-5 border-t border-marigold-600/35">
               <p class="font-sans text-[10px] sm:text-xs uppercase tracking-[0.32em] text-mehendi-700 mb-1.5">Save The Date</p>
               <p class="font-cinzel font-semibold text-xl sm:text-2xl tracking-[0.14em] text-mehendi-900">
@@ -666,7 +611,6 @@
               Mehmoorganj, Varanasi, Uttar Pradesh
             </p>
 
-            <!-- Action Buttons -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a href="https://www.google.com/maps/search/?api=1&query=Chaurasiya+Lawn+Mehmoorganj+Varanasi" target="_blank" rel="noopener noreferrer"
                 class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-marigold-400 px-6 py-3 text-xs font-sans font-semibold uppercase tracking-[0.2em] text-mehendi-950 shadow-md hover:bg-marigold-300 transition">
@@ -695,10 +639,7 @@
               </button>
             </div>
 
-            <!-- Dynamic Wishes Grid -->
-            <div id="wishesContainer" class="grid grid-cols-1 gap-3.5">
-              <!-- Empty state rendered by JS when no wishes submitted yet -->
-            </div>
+            <div id="wishesContainer" class="grid grid-cols-1 gap-3.5"></div>
           </div>
 
           <!-- Closing Footer Signature -->
@@ -789,53 +730,126 @@
       }
     })();
 
-    // 2. Web Audio Celebratory Chimes
+    // 2. Web Audio Celebratory Chimes & Gentle Background Loop
     let audioCtx = null;
-    let chimesEnabled = false;
+    let chimesEnabled = true;
+    let bgmTimer = null;
+    let phraseIndex = 0;
 
-    function playCelebrationChime() {
-      try {
-        if (!audioCtx) {
-          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    // Gentle Raag Bhupali (C D E G A C') melodic phrases
+    const chimePhrases = [
+      [523.25, 659.25, 783.99, 1046.5],
+      [880.00, 783.99, 659.25, 587.33],
+      [523.25, 587.33, 659.25, 783.99],
+      [659.25, 783.99, 880.00, 1046.5]
+    ];
+
+    function ensureAudioContext() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) {
+          audioCtx = new AudioContextClass();
         }
-        if (audioCtx.state === 'suspended') {
-          audioCtx.resume();
-        }
-        // Auspicious Pentatonic Notes (Sa Re Ga Pa Dha Sa')
-        const notes = [523.25, 587.33, 659.25, 783.99, 880.0, 1046.5];
-        notes.forEach((freq, idx) => {
-          const osc = audioCtx.createOscillator();
-          const gain = audioCtx.createGain();
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(freq, audioCtx.currentTime + idx * 0.11);
-
-          gain.gain.setValueAtTime(0.0001, audioCtx.currentTime + idx * 0.11);
-          gain.gain.exponentialRampToValueAtTime(0.09, audioCtx.currentTime + idx * 0.11 + 0.04);
-          gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + idx * 0.11 + 1.3);
-
-          osc.connect(gain);
-          gain.connect(audioCtx.destination);
-          osc.start(audioCtx.currentTime + idx * 0.11);
-          osc.stop(audioCtx.currentTime + idx * 0.11 + 1.35);
-        });
-      } catch (e) {
-        // Ignore if blocked by browser autoplay policy
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
       }
     }
 
-    function toggleAmbientAudio() {
-      chimesEnabled = !chimesEnabled;
+    function playChimeNotes(notes, spacing = 0.24, peakGain = 0.06) {
+      if (!chimesEnabled) return;
+      try {
+        ensureAudioContext();
+        if (!audioCtx) return;
+
+        const now = audioCtx.currentTime;
+        notes.forEach((freq, idx) => {
+          const start = now + idx * spacing;
+
+          // Fundamental warm bell tone
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, start);
+
+          // Soft harmonic overtone for metallic temple-bell shimmer
+          const overtone = audioCtx.createOscillator();
+          const overtoneGain = audioCtx.createGain();
+          overtone.type = 'triangle';
+          overtone.frequency.setValueAtTime(freq * 2, start);
+
+          gain.gain.setValueAtTime(0.0001, start);
+          gain.gain.exponentialRampToValueAtTime(peakGain, start + 0.03);
+          gain.gain.exponentialRampToValueAtTime(0.0001, start + 2.2);
+
+          overtoneGain.gain.setValueAtTime(0.0001, start);
+          overtoneGain.gain.exponentialRampToValueAtTime(peakGain * 0.22, start + 0.02);
+          overtoneGain.gain.exponentialRampToValueAtTime(0.0001, start + 1.1);
+
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          overtone.connect(overtoneGain);
+          overtoneGain.connect(audioCtx.destination);
+
+          osc.start(start);
+          osc.stop(start + 2.25);
+          overtone.start(start);
+          overtone.stop(start + 1.15);
+        });
+      } catch (e) {
+        // Ignore if browser blocks audio
+      }
+    }
+
+    function startAmbientChimeLoop() {
+      stopAmbientChimeLoop();
+      if (!chimesEnabled) return;
+      bgmTimer = setInterval(() => {
+        if (!chimesEnabled || document.hidden) return;
+        const phrase = chimePhrases[phraseIndex % chimePhrases.length];
+        phraseIndex++;
+        playChimeNotes(phrase, 0.42, 0.045);
+      }, 4800);
+    }
+
+    function stopAmbientChimeLoop() {
+      if (bgmTimer) {
+        clearInterval(bgmTimer);
+        bgmTimer = null;
+      }
+    }
+
+    function updateAudioButtonUI() {
       const icon = document.getElementById('audioIcon');
       const label = document.getElementById('audioLabel');
       if (chimesEnabled) {
         icon.textContent = '🔔';
         label.textContent = 'Chimes On';
-        playCelebrationChime();
       } else {
         icon.textContent = '🔇';
         label.textContent = 'Chimes Off';
       }
     }
+
+    function toggleAmbientAudio() {
+      chimesEnabled = !chimesEnabled;
+      updateAudioButtonUI();
+      if (chimesEnabled) {
+        playChimeNotes([523.25, 659.25, 783.99, 1046.5], 0.16, 0.075);
+        startAmbientChimeLoop();
+      } else {
+        stopAmbientChimeLoop();
+      }
+    }
+
+    // Pause loop when tab is hidden
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopAmbientChimeLoop();
+      } else if (chimesEnabled && isOpening) {
+        startAmbientChimeLoop();
+      }
+    });
 
     // 3. Envelope Open & Seal Animations + Sparkle Burst
     let isOpening = false;
@@ -876,8 +890,11 @@
       wrapper.classList.add('is-opening');
       triggerSealSparkles();
 
+      // Play opening flourish immediately on user tap & start gentle BGM loop
       if (chimesEnabled) {
-        playCelebrationChime();
+        updateAudioButtonUI();
+        playChimeNotes([523.25, 587.33, 659.25, 783.99, 880.0, 1046.5], 0.12, 0.08);
+        startAmbientChimeLoop();
       }
 
       setTimeout(() => {
@@ -898,6 +915,7 @@
 
     function sealEnvelopeAgain() {
       isOpening = false;
+      stopAmbientChimeLoop();
       const wrapper = document.getElementById('envelopeWrapper');
       const envStage = document.getElementById('envelopeStage');
       const invStage = document.getElementById('invitationStage');
@@ -966,7 +984,7 @@
       URL.revokeObjectURL(url);
     }
 
-    // 6. Wishes Wall & RSVP Modal (Zero hardcoded examples)
+    // 6. Wishes Wall & RSVP Modal
     const STORAGE_KEY = 'shivangi_rohit_wedding_wishes_v1';
 
     function escapeHtml(str) {
@@ -1051,7 +1069,6 @@
       renderWishes();
     }
 
-    // Initialize empty-state Wishes Wall on load
     renderWishes();
   </script>
 </body>
